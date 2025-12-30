@@ -1,65 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farhan Iftekhar</title>
-    <style>
-        body {
-            font-family: 'Verdana', sans-serif; /* The classic academic font */
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            line-height: 1.6;
-            color: #333;
-        }
-        h1 { font-size: 2.2em; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
-        h2 { font-size: 1.5em; margin-top: 30px; }
-        a { color: #0066cc; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .header-img { float: right; width: 200px; border-radius: 50%; margin-left: 20px; }
-        .date { color: #666; font-size: 0.9em; margin-right: 10px; }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 10px; }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Farhan Iftekhar | Product Leader</title>
+
+<style>
+/* ---------- VARIABLES & RESET ---------- */
+:root {
+    --text: #111;
+    --muted: #666;
+    --accent: #0055cc;
+    --line: #e0e0e0;
+    --bg: #ffffff;
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --mono: "SFMono-Regular", Consolas, Menlo, monospace;
+}
+
+body {
+    margin: 0;
+    padding: 60px 20px;
+    max-width: 800px;
+    margin-inline: auto;
+    font-family: var(--font);
+    color: var(--text);
+    line-height: 1.6;
+    background-color: var(--bg);
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---------- HEADER ---------- */
+header { margin-bottom: 40px; }
+
+.header-content {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Photo Styling */
+.header-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #f0f0f0;
+    border: 1px solid #eaeaea;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.tagline {
+    font-size: 1.15rem;
+    color: var(--text);
+    font-weight: 500;
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+}
+
+.subtitle {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin: 0 0 16px 0;
+    line-height: 1.5;
+}
+
+.links {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    margin: 0;
+}
+.links a { margin-right: 15px; }
+
+.pen-divider {
+    display: block;
+    width: 110%;
+    max-width: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, #222 18%, #000 50%, #222 82%, transparent 100%);
+    border-radius: 999px;
+    margin: 12px -5% 28px -5%;
+    transform: none;
+    opacity: 0.65;
+}
+
+p { text-align: justify; }
+
+
+/* ---------- SECTIONS ---------- */
+section { margin-bottom: 70px; }
+
+section:first-of-type { margin-bottom: 30px; }
+
+h2 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* ---------- TIMELINE ENGINE ---------- */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    position: relative;
+}
+
+/* The Vertical Line (Spine) */
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 110px;
+    top: 8px;
+    bottom: 0;
+    width: 1px;
+    background: var(--line);
+    z-index: 0;
+}
+
+.timeline-row {
+    display: flex;
+    gap: 30px;
+    position: relative;
+}
+
+/* Date Column */
+.timeline-date {
+    width: 90px;
+    text-align: right;
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    color: var(--muted);
+    flex-shrink: 0;
+    padding-top: 2px;
+}
+
+/* The Dot on the Line */
+.timeline-row::after {
+    content: "";
+    position: absolute;
+    left: 110px;
+    top: 9px;
+    width: 7px;
+    height: 7px;
+    background: #fff;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* Active Dot (Blue) */
+.timeline-row.active::after {
+    border-color: var(--accent);
+    background: var(--accent);
+}
+
+/* Content Column */
+.timeline-content {
+    flex: 1;
+    padding-left: 15px;
+}
+
+.timeline-content strong {
+    display: block;
+    font-size: 1.0rem;
+    margin-bottom: 4px;
+    color: #000;
+}
+
+.timeline-content p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 640px) {
+    body { padding: 40px 20px; }
+    
+    .header-content { flex-direction: column-reverse; gap: 20px; }
+    .header-photo { width: 80px; height: 80px; }
+    
+    .timeline::before { left: 15px; }
+    .timeline-row::after { left: 15px; }
+    
+    .timeline-row { flex-direction: column; gap: 5px; padding-left: 30px; }
+    .timeline-date { text-align: left; margin-bottom: 4px; color: var(--accent); }
+    .timeline-content { padding-left: 0; }
+}
+</style>
 </head>
+
 <body>
 
-    <h1>Farhan Iftekhar</h1>
-    
+<header>
+    <div class="header-content">
+        <img src="assets/image.png" alt="Farhan Iftekhar" class="header-photo">
+        <div class="header-text">
+            <h1>Farhan Iftekhar</h1>
+            <div class="tagline">Turning ideas into working systems. 🚀</div>
+            <div class="subtitle">Senior Product Leader · Enterprise SaaS · Cloud & AI Innovation</div>
+            <div class="links">
+                <a href="mailto:farhan.iftekhar@gmail.com">Email</a>
+                <a href="https://linkedin.com/in/farhaniftekhar">LinkedIn</a>
+                <a href="https://github.com/farhaniftekhar">GitHub</a>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="pen-divider"></div>
+<section>
     <p>
-        I am a Senior Product Leader and Tech Executive based in Toronto. I currently lead 
-        Product Strategy for Mortgage SaaS Solutions at <a href="https://www.tcs.com">TCS</a>.
+        I build enterprise platforms that modernize banking. With <strong>21+ years</strong> of experience in regulated financial environments, I help financial organizations modernize their platforms through SaaS, cloud, and AI innovation.
     </p>
-    <p>
-        My work operates at the intersection of <strong>Enterprise Banking</strong>, 
-        <strong>SaaS Strategy</strong>, and <strong>Cloud/AI Innovation</strong>. 
-        Previously, I led the digital transformation for <a href="#">Simplii Financial</a> 
-        and modernized mortgage platforms for <a href="#">CIBC</a>.
-    </p>
-    <p>
-        <a href="mailto:farhan.iftekhar@gmail.com">Email</a> / 
-        <a href="https://www.linkedin.com/in/farhaniftekhar">LinkedIn</a> / 
-        <a href="https://github.com/farhaniftekhar">GitHub</a>
-    </p>
+</section>
 
-    <h2>Selected Work</h2>
-    <ul>
-        <li>
-            <span class="date">[2018 - Present]</span> 
-            <strong>Mortgage SaaS Platform (TCS):</strong> Directed the commercial strategy and Azure delivery of a proprietary origination engine now used by a Top-Tier Canadian Bank.
-        </li>
-        <li>
-            <span class="date">[2017 - 2018]</span> 
-            <strong>Simplii Financial Launch:</strong> Orchestrated the migration of 2M+ customers from PC Financial to Simplii.
-        </li>
-    </ul>
+<section>
+    <h2>Experience</h2>
+    <div class="timeline">
+        
+        <div class="timeline-row active">
+            <div class="timeline-date">2018–Present</div>
+            <div class="timeline-content">
+                <strong>SaaS Product Lead & Commercial Owner — Mortgage SaaS Platform @TCS</strong>
+                <p>Leading product strategy, commercialization, and P&L for a Mortgage SaaS platform on Microsoft Azure, deployed as the core origination engine for a top-tier Canadian bank.</p>
+                <p>&nbsp;</p>
+                <p>Scaled a custom solution into a single-tenant enterprise SaaS asset while aligning executive stakeholders, enterprise architecture, and global delivery teams in a highly regulated environment.</p>
+            </div>
+        </div>
 
-    <h2>Essays / Thoughts</h2>
-    <ul>
-        <li><a href="#">The Future of AI in Canadian Banking</a> (Coming Soon)</li>
-        <li><a href="#">Moving from "Project Manager" to "Product Leader"</a> (Coming Soon)</li>
-    </ul>
+        <div class="timeline-row">
+            <div class="timeline-date">2017–2018</div>
+            <div class="timeline-content">
+                <strong>Program Manager — Simplii Financial @TCS</strong>
+                <p>Orchestrated the zero-downtime migration of ~2M customers from PC Financial to Simplii Financial, including Digital Proof of Identity integration and large-scale workflow modernization, enabling fully remote onboarding without service interruption.</p>
+            </div>
+        </div>
+
+        <div class="timeline-row">
+            <div class="timeline-date">2014–2016</div>
+            <div class="timeline-content">
+                <strong>Delivery Lead — CIBC Mortgage Modernization @TCS</strong>
+                <p>Delivered the modernization of CIBC’s mortgage origination landscape, introducing automated adjudication and straight-through processing (STP) for retail lending workflows.</p>
+                <p>Integrated advisor platforms with automated document capture and validation while maintaining strict OSFI B-20 compliance.</p>
+            </div>
+        </div>
+
+        <div class="timeline-row">
+            <div class="timeline-date">2004–2014</div>
+            <div class="timeline-content">
+                <strong>Engineering & Technical Leadership — India & Canada @TCS</strong>
+                <p>Held progressively senior technical and delivery roles across real estate secured lending, unsecured lending, and investment lending platforms.</p>
+                <p>&nbsp;</p>
+                <p>Earlier work included clearing and settlement systems, providing a deep foundation in risk, data integrity, and transaction resilience.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <h2>Projects & Labs</h2>
+    <div class="timeline">
+
+        <div class="timeline-row active">
+            <div class="timeline-date">Active</div>
+            <div class="timeline-content">
+                <strong><a href="#">The LLM Council</a></strong>
+                <p>An agentic workflow using Llama 3 and Microsoft Copilot to debate life decisions via simulated personas (e.g., "The Optimist" vs. "The Risk Manager").</p>
+            </div>
+        </div>
+
+        <div class="timeline-row">
+            <div class="timeline-date">Building</div>
+            <div class="timeline-content">
+                <strong><a href="#">Payroll Auditor SaaS</a></strong>
+                <p>A B2B Micro-SaaS for auditing Canadian SAP Payroll data. Currently in MVP development using Python/Pandas.</p>
+            </div>
+        </div>
+
+        <div class="timeline-row">
+            <div class="timeline-date">2025</div>
+            <div class="timeline-content">
+                <strong><a href="#">Blaisdale Bookmarks</a></strong>
+                <p>Generative AI illustration project for Montessori International Day using Midjourney and custom style-transfer prompts.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <h2>Writing</h2>
+    <div class="timeline">
+        <div class="timeline-row">
+            <div class="timeline-date">Dec 2025</div>
+            <div class="timeline-content">
+                <strong><a href="#">The Death of the Manual Underwriter?</a></strong>
+                <p>Why LLMs will augment risk teams, not replace them.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
 </body>
 </html>
