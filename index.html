@@ -41,6 +41,33 @@ header { margin-bottom: 40px; }
     align-items: start;
 }
 
+.header-resume {
+    position: fixed;
+    right: 20px;
+    top: 60px;
+    z-index: 100;
+}
+
+.resume-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background-color: transparent;
+    color: var(--accent);
+    border: 1.5px solid var(--accent);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.resume-btn:hover {
+    background-color: var(--accent);
+    color: white;
+    text-decoration: none;
+}
+
 /* Photo Styling */
 .header-photo {
     width: 160px;
@@ -196,8 +223,18 @@ h2 {
 @media (max-width: 640px) {
     body { padding: 40px 20px; }
     
-    .header-content { flex-direction: column-reverse; gap: 20px; }
+    .header-content { 
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
     .header-photo { width: 80px; height: 80px; }
+    
+    .header-resume {
+        position: static;
+        text-align: left;
+        padding-top: 0;
+    }
     
     .timeline::before { left: 15px; }
     .timeline-row::after { left: 15px; }
@@ -224,12 +261,19 @@ h2 {
                 <a href="https://github.com/farhaniftekhar">GitHub</a>
             </div>
         </div>
+        <div class="header-resume">
+            <a href="assets/Farhan_Iftekhar_SaaS_Product_Leader.pdf" class="resume-btn" download>
+                ↓ Resume
+            </a>
+        </div>
     </div>
 </header>
 <div class="pen-divider"></div>
+
 <section>
+    <h2>About</h2>
     <p>
-        I build enterprise platforms that modernize banking. With <strong>21+ years</strong> of experience in regulated financial environments, I help financial organizations modernize their platforms through SaaS, cloud, and AI innovation.
+        Farhan Iftekhar is a Product & SaaS executive focused on digitizing financial infrastructure. He currently leads a dedicated Mortgage SaaS platform at TCS, overseeing a $75B+ annual origination portfolio. Previously, he directed the digital launch of Simplii Financial and executed a zero-downtime migration for 2 million customers. With deep roots in banking domain expertise, he leverages GenAI and Cloud architecture to build commercially viable enterprise systems.
     </p>
 </section>
 
@@ -240,37 +284,39 @@ h2 {
         <div class="timeline-row active">
             <div class="timeline-date">2018–Present</div>
             <div class="timeline-content">
-                <strong>SaaS Product Lead & Commercial Owner — Mortgage SaaS Platform @TCS</strong>
-                <p>Leading product strategy, commercialization, and P&L for a Mortgage SaaS platform on Microsoft Azure, deployed as the core origination engine for a top-tier Canadian bank.</p>
-                <p>&nbsp;</p>
-                <p>Scaled a custom solution into a single-tenant enterprise SaaS asset while aligning executive stakeholders, enterprise architecture, and global delivery teams in a highly regulated environment.</p>
+                <strong>Head of Product Strategy & Commercial Owner — Mortgage SaaS Platform @TCS</strong>
+                <p><strong>SaaS Transformation:</strong> Converted custom banking software into multi-tenant enterprise SaaS on Azure, supporting $75B+ annual origination and 4,000+ users at a Tier-1 Canadian bank.</p>
+                <p><strong>Global Engineering Scale:</strong> Built and led 120+ member organization across 6 global locations in 5 Agile pods, orchestrating 25+ parallel initiatives with consistent delivery.</p>
+                <p><strong>AI-Driven Innovation:</strong> Conceptualized GenAI-infused SDLC application to automate developer workflows and testing, driving significant improvements in release velocity.</p>
+                <p><strong>Commercial Ownership:</strong> Own product P&L and pricing strategy, manage solution consulting intake, and lead strategic vendor negotiations for software licenses and MSA/SOW frameworks.</p>
+                <p><strong>SaaS Operations:</strong> Established banking-grade governance frameworks ensuring 99.9% availability, serving as primary escalation point for critical incidents.</p>
             </div>
         </div>
 
         <div class="timeline-row">
             <div class="timeline-date">2017–2018</div>
             <div class="timeline-content">
-                <strong>Program Manager — Simplii Financial @TCS</strong>
-                <p>Orchestrated the zero-downtime migration of ~2M customers from PC Financial to Simplii Financial, including Digital Proof of Identity integration and large-scale workflow modernization, enabling fully remote onboarding without service interruption.</p>
+                <strong>Program Manager – Digital Banking Transformation (Simplii Financial) @TCS</strong>
+                <p>Led greenfield launch of Simplii Financial and executed zero-downtime migration of ~2M customers from PC Financial.</p>
+                <p><strong>Digital Identity:</strong> Delivered Digital Proof of Identity (DPOI) with Canada Post in under 3 months, enabling fully remote customer onboarding without service interruption.</p>
             </div>
         </div>
 
         <div class="timeline-row">
             <div class="timeline-date">2014–2016</div>
             <div class="timeline-content">
-                <strong>Delivery Lead — CIBC Mortgage Modernization @TCS</strong>
-                <p>Delivered the modernization of CIBC’s mortgage origination landscape, introducing automated adjudication and straight-through processing (STP) for retail lending workflows.</p>
-                <p>Integrated advisor platforms with automated document capture and validation while maintaining strict OSFI B-20 compliance.</p>
+                <strong>Delivery Lead – Personal Banking Technology (CIBC) @TCS</strong>
+                <p>Reduced mortgage approval times from 5 days to under 10 seconds by delivering the "Expert Lender" automated adjudication engine.</p>
+                <p><strong>Governance & Quality:</strong> Formalized release governance across 20+ applications, reducing production defect rates by 30% and increasing release velocity.</p>
             </div>
         </div>
 
         <div class="timeline-row">
             <div class="timeline-date">2004–2014</div>
             <div class="timeline-content">
-                <strong>Engineering & Technical Leadership — India & Canada @TCS</strong>
-                <p>Held progressively senior technical and delivery roles across real estate secured lending, unsecured lending, and investment lending platforms.</p>
-                <p>&nbsp;</p>
-                <p>Earlier work included clearing and settlement systems, providing a deep foundation in risk, data integrity, and transaction resilience.</p>
+                <strong>Engineering & Technical Lead – Mortgage & Capital Markets @TCS</strong>
+                <p><strong>Mortgage Platforms (CIBC):</strong> Built mission-critical decision management and document generation platforms for multi-billion-dollar RESL portfolios. Implemented FICO-based scoring models and architected real-time integrations with Equifax, TransUnion, and CMHC.</p>
+                <p><strong>Capital Markets - Clearing Corporation of India Ltd. (CCIL):</strong> Engineered Risk Management & Settlement systems (Forex, Money Market) and automated trade lifecycle reporting for Interest Rate Swaps (IRS).</p>
             </div>
         </div>
 
@@ -278,33 +324,62 @@ h2 {
 </section>
 
 <section>
-    <h2>Projects & Labs</h2>
+    <h2>Core Expertise</h2>
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div>
+            <strong style="display: block; margin-bottom: 8px; color: var(--accent);">Product & Commercial</strong>
+            <p style="margin: 0; font-size: 0.9rem; color: var(--muted);">B2B SaaS Strategy, P&L Ownership, Pricing Models, Vendor Ecosystem, Contract Negotiation</p>
+        </div>
+        <div>
+            <strong style="display: block; margin-bottom: 8px; color: var(--accent);">Technology Leadership</strong>
+            <p style="margin: 0; font-size: 0.9rem; color: var(--muted);">Microsoft Azure, Cloud Architecture, Enterprise SaaS, DevOps & CI/CD, GenAI Integration</p>
+        </div>
+        <div>
+            <strong style="display: block; margin-bottom: 8px; color: var(--accent);">Operational Excellence</strong>
+            <p style="margin: 0; font-size: 0.9rem; color: var(--muted);">Global Team Leadership, Agile Delivery, SaaS Operations, 99.9%+ Availability, OSFI Compliance</p>
+        </div>
+        <div>
+            <strong style="display: block; margin-bottom: 8px; color: var(--accent);">Banking Domain</strong>
+            <p style="margin: 0; font-size: 0.9rem; color: var(--muted);">Mortgage Origination, Credit Adjudication, Risk Management, Clearing & Settlement</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Education & Certifications</h2>
     <div class="timeline">
-
-        <div class="timeline-row active">
-            <div class="timeline-date">Active</div>
-            <div class="timeline-content">
-                <strong><a href="#">The LLM Council</a></strong>
-                <p>An agentic workflow using Llama 3 and Microsoft Copilot to debate life decisions via simulated personas (e.g., "The Optimist" vs. "The Risk Manager").</p>
-            </div>
-        </div>
-
         <div class="timeline-row">
-            <div class="timeline-date">Building</div>
+            <div class="timeline-date">Executive</div>
             <div class="timeline-content">
-                <strong><a href="#">Payroll Auditor SaaS</a></strong>
-                <p>A B2B Micro-SaaS for auditing Canadian SAP Payroll data. Currently in MVP development using Python/Pandas.</p>
+                <strong>Growth & Transformation (G&T Phoenix)</strong>
+                <p>The Ohio State University</p>
             </div>
         </div>
-
         <div class="timeline-row">
-            <div class="timeline-date">2025</div>
+            <div class="timeline-date">Degree</div>
             <div class="timeline-content">
-                <strong><a href="#">Bookmarks</a></strong>
-                <p>Gen AI illustration project for Montessori International Day using Midjourney and custom style-transfer prompts.</p>
+                <strong>Bachelor of Engineering (Electronics)</strong>
+                <p>Mumbai University</p>
             </div>
         </div>
+    </div>
+</section>
 
+<section>
+    <h2>Projects & Labs</h2>
+    <div style="display: flex; flex-direction: column; gap: 25px;">
+        <div>
+            <strong style="display: block; margin-bottom: 6px; font-size: 1.0rem;">The LLM Council</strong>
+            <p style="margin: 0; font-size: 0.9rem; color: var(--muted);">Agentic AI consensus engine using OpenAI API. Simulates multiple personas (e.g., "The Optimist" vs. "The Risk Manager") to debate life decisions and provide balanced perspective.</p>
+        </div>
+        <div>
+            <strong style="display: block; margin-bottom: 6px; font-size: 1.0rem;">Real Estate Price Predictor</strong>
+            <p style="margin: 0; font-size: 0.9rem; color: var(--muted);">End-to-end PropTech web application for predictive analytics on residential real estate markets.</p>
+        </div>
+        <div>
+            <strong style="display: block; margin-bottom: 6px; font-size: 1.0rem;">Stock Analysis Tool</strong>
+            <p style="margin: 0; font-size: 0.9rem; color: var(--muted);">Automated analysis using Python/Pandas to generate P/E insights and identify undervalued assets.</p>
+        </div>
     </div>
 </section>
 
